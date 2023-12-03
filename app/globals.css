@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,12 +10,48 @@
   overflow-x: hidden;
 }
 
-:root {
- 
+body {
+ background-color: #F4F7FA;
+ font-family: "Rubik", sans-serif;
+}
+
+.btn-primary {
+  background: linear-gradient(170.04deg, #f0aa22 -8.91%, #f05822 99.52%);
+  font-weight: 500;
+  box-shadow: 0 0px 14px rgba(0, 0, 0, 0.07), 0px 7px 14px rgba(241, 140, 65, 0.26);
+  border-radius: 3px;
+  color: #f9fbfd;
+  border: none;
+  padding: calc(0.5rem + 1px) 1.3rem;
+  font-size: 12px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 
+.btn-primary:hover {
+  box-shadow: none;
+}
 
-body {
- 
+.btn-secondary {
+  border: 1px solid #063a4f;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: #063a4f;
+  background: 0 0;
+  outline: 0;
+  padding: 0.5rem 1.3rem;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.btn-secondary-white {
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: #fff;
+  background: 0 0;
+  outline: 0;
+  padding: 0.5rem 1.3rem;
+  font-weight: 500;
+  font-size: 12px;
 }
