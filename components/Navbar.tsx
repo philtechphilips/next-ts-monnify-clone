@@ -8,8 +8,9 @@ import SecondaryButton from "./Buttons/SecondaryButton";
 import 'remixicon/fonts/remixicon.css';
 import 'animate.css';
 
+
 const Navbar = () => {
-  const [menuClose, setMenuClose] = useState(false);
+  const [menuClose, setMenuClose] = useState(true);
 
   const onMenuChange = () => {
     setMenuClose(!menuClose);
@@ -64,18 +65,25 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <nav className={`md:hidden h-full bg-[#063A4F] w-full absolute top-0 z-50 ease-in-out ${menuClose ? 'transform translate-x-[100%]' : 'transform translate-x-0 animate__animated animate__slideInRight'
-        }`}>
-        <ul className='px-10 py-10 flex flex-col gap-8 mt-10  z-[10000]'>
+      <nav className={`md:hidden h-full bg-[#063A4F] w-full absolute top-0 z-50 transition-transform ${menuClose ? '' : ' duration-1000 ease-in-out'
+        } ${menuClose ? 'transform translate-x-[100%]' : ''}`}
+      >
+        <ul className={`px-10 py-10 flex flex-col gap-8 mt-10 z-[10000] ${menuClose ? '' : 'animate__animated animate__fadeIn animate__delay-1s ease-in'
+          }`}
+        >
           {NAV_LINKS && NAV_LINKS.map((item) => (
             <Link key={item.key} href={item.href} className=' z-[10000]'>
               <li className='text-white text-[26px] font-[500] z-[10000]'>{item.label}</li>
             </Link>
           ))}
         </ul>
-        <Image alt='bg-image' src="/images/logo-lg.svg" width={320} height={500} className='absolute top-5 right-0 z-0' />
+        <Image alt='bg-image' src="/images/logo-lg.svg" width={320} height={500} className={`absolute top-5 right-0 z-0 ${menuClose ? '' : 'animate__animated animate__fadeInRight animate__delay-1s'
+          }`}
+        />
 
-        <div className='flex gap-5 bg-[#053041] opacity-100 px-12 py-5 z-[1000] absolute right-0 left-0 bottom-0'>
+        <div className={`flex gap-5 bg-[#053041] opacity-100 px-12 py-5 z-[1000] absolute right-0 left-0 bottom-0 ${menuClose ? '' : 'animate__animated animate__fadeIn animate__delay-2s ease-in'
+          }`}
+        >
           <PrimaryButton css="btn-secondary-white" />
           <SecondaryButton />
         </div>
