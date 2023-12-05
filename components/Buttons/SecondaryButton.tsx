@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 
-const SecondaryButton = () => {
+const SecondaryButton = ({ text }: Button) => {
   return (
     <Link href="/#" className="btn-primary">
-    Get Started
-  </Link>
+      {text}
+    </Link>
   )
 }
 

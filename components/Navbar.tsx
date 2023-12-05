@@ -85,7 +85,7 @@ const Navbar = () => {
           }`}
         >
           <PrimaryButton css="btn-secondary-white" />
-          <SecondaryButton />
+          <SecondaryButton text="Get Started" />
         </div>
         <i className="ri-close-line text-4xl text-white absolute top-5 right-7 font-thin" onClick={onMenuChange}></i>
       </nav>
